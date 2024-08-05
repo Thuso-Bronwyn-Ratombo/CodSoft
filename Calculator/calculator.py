@@ -14,18 +14,19 @@ def divide(x, y):
         return x / y
 
 def calculator():
-    print("Select operation:")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
+    print("\n   What calculation would you like to do? \n")
+    print("1. Add (+)")
+    print("2. Subtract (-)")
+    print("3. Multiply (x)")
+    print("4. Divide (/)\n")
+    print("")
     
     while True:
-        choice = input("Enter choice (1/2/3/4): ")
+        choice = input("Enter choice: ")
         
         if choice in ['1', '2', '3', '4']:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
             
             if choice == '1':
                 print(f"{num1} + {num2} = {add(num1, num2)}")
@@ -44,7 +45,8 @@ def calculator():
                     print(f"{num1} / {num2} = {result}")
                     
             next_calculation = input("Do you want to perform another calculation? (yes/no): ")
-            if next_calculation.lower() != 'yes':
+            if next_calculation.lower() != 'yes' or next_calculation.lower() != 'y':
+                print("Closing application...")
                 break
         else:
             print("Invalid Input")
